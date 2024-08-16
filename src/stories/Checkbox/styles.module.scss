@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  padding-left: 10px;
+
+  .error {
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: 400;
+		color: #e63838;
+		margin-top: 10px;
+  }
+
+  .label {
+		font-size : 14px;
+		color     : rgba(70, 70, 79, 1);
+  }
+}
