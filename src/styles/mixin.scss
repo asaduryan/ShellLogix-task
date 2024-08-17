@@ -1,0 +1,25 @@
+$breakpoints : (
+		mobile: 375px,
+		mobile-x: 480px,
+		mini-tablet: 576px,
+		tablet: 769px,
+		tablet-x: 991px,
+		desktop: 1048px,
+		laptop: 1200px,
+		laptop-x: 1350px,
+		pc: 1440px,
+		pc-x: 1920px,
+);
+
+@mixin customBreakpointSize($width) {
+  @media (max-width : $width) {
+	@content;
+  }
+}
+
+@mixin breakpoint($device) {
+  $width : map-get($breakpoints, $device);
+  @media (max-width : $width) {
+	@content;
+  }
+}

@@ -4,7 +4,7 @@ import { Checkbox, FormControlLabel } from "@mui/material";
 import styles from "./styles.module.scss";
 import { ICheckboxProps } from "./types";
 
-export const CheckboxComponent = forwardRef(
+const CheckboxComponent = forwardRef(
   (
     { label, error, ...rest }: ICheckboxProps,
     ref: ForwardedRef<HTMLButtonElement>,
@@ -20,3 +20,4 @@ export const CheckboxComponent = forwardRef(
     );
   },
 );
+export default CheckboxComponent

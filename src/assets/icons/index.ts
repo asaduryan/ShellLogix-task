@@ -1,0 +1,12 @@
+export {default as IconConfiguration} from "./IconConfiguration";
+export {default as IconDate} from "./IconDate";
+export {default as IconDocs} from "./IconDocs";
+export {default as IconFlows} from "./IconFlows";
+export {default as IconFGovernance} from "./IconGovernance";
+export {default as IconImpact} from "./IconImpact";
+export {default as IconIntelligence} from "./IconIntelligence";
+export {default as IconLearn} from "./IconLearn"
+export {default as IconReporting} from "./IconReporting"
+export {default as IconSupport} from "./IconSupport"
+export {default as IconSurveys} from "./IconSurveys"
+export {default as IconTasks} from "./IconTasks"

@@ -1,0 +1,55 @@
+@import "../../styles/flex.scss";
+@import "../../styles/mixin.scss";
+
+.wrapper {
+	width: 100%;
+	padding: 6px 0;
+	@include flex-column-align;
+	gap: 3px;
+
+	.icon {
+		padding: 4px 16px;
+		border-radius: 20px;
+		@include flex-center
+	}
+
+	.name {
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 16px;
+		color: #444746;
+	}
+
+	&:hover {
+		.icon {
+			background: rgb(220, 216, 246);
+		}
+
+		.name {
+			color: #2E3EFF;
+		}
+
+		svg {
+			path {
+				fill: #2E3EFF;
+			}
+		}
+	}
+
+}
+
+.active {
+	.icon {
+		background: rgb(220, 216, 246);
+	}
+
+	.name {
+		color: #2E3EFF;
+	}
+
+	svg {
+		path {
+			fill: #2E3EFF;
+		}
+	}
+}

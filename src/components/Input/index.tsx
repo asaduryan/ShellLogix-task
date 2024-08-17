@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { TextFieldStyled } from "./input.styled";
 import { IInputProps } from "./types";
 
-export const InputComponent = forwardRef<HTMLInputElement, IInputProps>(
+const InputComponent = forwardRef<HTMLInputElement, IInputProps>(
   ({ label, warning, error, onChange, value, ...rest }, ref) => {
     return (
       <div className={styles.wrapper}>
@@ -20,3 +20,4 @@ export const InputComponent = forwardRef<HTMLInputElement, IInputProps>(
     );
   },
 );
+export default InputComponent;

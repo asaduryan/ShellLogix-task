@@ -1,0 +1,8 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/flex.scss';
+
+.wrapper {
+  width  : 100%;
+  @include flex-column-align;
+  cursor : pointer;
+}

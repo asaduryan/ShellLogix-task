@@ -4,7 +4,7 @@ import { TextAreaStyled } from "./textarea.styled";
 import { ITextareaProps } from "./types";
 import styles from "./styles.module.scss";
 
-export const TextareaComponent = forwardRef<HTMLInputElement, ITextareaProps>(
+const TextareaComponent = forwardRef<HTMLInputElement, ITextareaProps>(
   ({ label, warning, error, onChange, value, ...rest }, ref) => {
     return (
       <div className={styles.wrapper}>
@@ -25,3 +25,4 @@ export const TextareaComponent = forwardRef<HTMLInputElement, ITextareaProps>(
     );
   },
 );
+export default TextareaComponent;
