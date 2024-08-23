@@ -4,6 +4,6 @@ export type IconType = keyof typeof icons;
 
 export type TCategoryData = {
   name: string;
-  Icon: IconType;
-  navigate: string;
+  icon: IconType;
+  path: string;
 };

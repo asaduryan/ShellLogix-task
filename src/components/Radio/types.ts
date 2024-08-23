@@ -1,12 +1,5 @@
-export interface RadioButtonOption {
-  label?: string;
-  value: string;
-}
-
-export interface RadioButtonProps {
+export interface RadioInputProps {
+  value: string | number;
   label: string;
-  options: RadioButtonOption[];
-  name: string;
-  value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  [key: string]: any;
 }

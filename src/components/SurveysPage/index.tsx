@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import type { ChangeEvent } from "react";
 import styles from "./styles.module.scss";
 import { Controller } from "react-hook-form";
@@ -19,6 +20,14 @@ import dayjs from "dayjs";
 
 const SurveysPage = () => {
   const { errors, handleSubmit, onSubmit, control } = useSurveys();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("anilist_access_token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <div className={styles.wrapper}>
@@ -74,7 +83,7 @@ const SurveysPage = () => {
                     {...field}
                     label="One survey per contributor"
                     value="per_contributor"
-                    // checked={field.value === "per_contributor"}
+                    checked={field.value === "per_contributor"}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       field.onChange(e.target.value)
                     }
@@ -135,14 +144,25 @@ const SurveysPage = () => {
           )}
         />
 
-        <div>
-          <ButtonComponent variant="contained" type="submit">
-            Create survey
-          </ButtonComponent>
-          <p className={styles.button_text}>
-            This will send the survey to your recipients
-          </p>
-        </div>
+        {isLoggedIn ? (
+          <div>
+            <ButtonComponent variant="contained" type="submit">
+              Create survey
+            </ButtonComponent>
+            <p className={styles.button_text}>
+              This will send the survey to your recipients
+            </p>
+          </div>
+        ) : (
+          <div>
+            <a
+              target="_blank"
+              href="https://anilist.co/api/v2/oauth/authorize?client_id=20567&redirect_uri=http://localhost:5173/auth&response_type=code"
+            >
+              LOG IN
+            </a>
+          </div>
+        )}
       </form>
     </div>
   );

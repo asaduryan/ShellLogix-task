@@ -1,34 +1,24 @@
-import React from "react";
-import Radio from "@mui/material/Radio";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-import { RadioButtonProps } from "./types";
+"use client";
 
-const RadioButton = React.forwardRef<HTMLDivElement, RadioButtonProps>(
-  ({ label, options, name, value, onChange }, ref) => {
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { ForwardedRef, forwardRef } from "react";
+
+import { RadioInputProps } from "./types";
+import { RadioMui } from "./radio.styled";
+import styles from "./styles.module.scss";
+
+const RadioInput = forwardRef(
+  ({ value, label, ...rest }: RadioInputProps, ref: ForwardedRef<Element>) => {
     return (
-      <FormControl ref={ref}>
-        <FormLabel component="legend">{label}</FormLabel>
-        <RadioGroup
-          aria-label={name}
-          name={name}
-          value={value}
-          onChange={onChange}
-        >
-          {options?.map((option) => (
-            <FormControlLabel
-              key={option?.value}
-              value={option?.value}
-              control={<Radio />}
-              label={option?.label}
-            />
-          ))}
-        </RadioGroup>
-      </FormControl>
+      <FormControlLabel
+        value={value}
+        control={<RadioMui />}
+        label={<span className={styles.label}>{label}</span>}
+        {...rest}
+        ref={ref}
+      />
     );
   },
 );
 
-export default RadioButton;
+export default RadioInput;
